@@ -1,0 +1,16 @@
+@mixin container {
+    max-width: calc((1170px/1440px)*100%);
+    margin: 0 auto;
+    @media screen and (max-width:1024px) {
+        max-width: calc(960px / 1024px * 100%);
+    }
+    @media screen and (max-width:768px) {
+        max-width: calc(720px / 768px * 100%);
+    }
+    @media screen and (max-width:576px) {
+        max-width: calc(540px / 576px * 100%);
+    }
+    @media screen and (max-width:400px) {
+        max-width: calc(300px / 320px * 100%);
+    }
+}

@@ -1,0 +1,64 @@
+@import "../../assets/style/mixin", "../../assets/style/variables";
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    font-size: 16px;
+    font-family: $Open-sans;
+}
+body{
+    overflow-x: hidden;
+}
+ul,ol{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.main{
+    &__container{
+        @include container;
+    }
+    &__heading{
+        font-size: 28px;
+        font-weight: 700;
+        margin-top: 50px;
+        font-style: italic;
+    }
+    &__logos{
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 30px;
+        row-gap: 50px;
+        @media screen and (max-width: 1068px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media screen and (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    &__logo-block{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__logo-block:hover img{
+        transition: all .3s linear;
+        -webkit-transition: all .3s linear;
+        -moz-transition: all .3s linear;
+        -ms-transition: all .3s linear;
+        -o-transition: all .3s linear;
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+}
+}

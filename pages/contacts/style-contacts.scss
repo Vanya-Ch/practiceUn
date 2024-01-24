@@ -1,0 +1,64 @@
+@import "../../assets/style/mixin", "../../assets/style/variables";
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    font-size: 16px;
+    font-family: $Open-sans;
+}
+body{
+    overflow-x: hidden;
+}
+ul,ol{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.main{
+    height: 94vh;
+    background-color: rgb(228, 227, 227);
+    padding: 50px 0;
+    &__container{
+        @include container;
+    }
+    &__heading{
+        font-size: 28px;
+        color: rgb(38, 38, 107);
+    }
+    &__block-heading{
+        color: rgb(65, 65, 131);
+        font-size: 24px;
+        margin-top: 25px;
+    }
+    &__numbers{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+    &__info{
+        
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 10px;
+    }
+}
+
+.info{
+    color: rgb(65, 65, 131);
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    &__svg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+}
