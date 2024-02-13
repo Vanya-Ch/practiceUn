@@ -9,19 +9,12 @@
         height: 94vh;
         z-index: -9000;
         position: absolute;
-        
         width: 100%;
-        @media screen and (max-width: 600px) {
-            display: none;
-        }
     }
 
     &__container {
         @include container;
         height: 100%;
-        @media screen and (max-width: 600px) {
-            height: 75%;
-        }
     }
 
     &__content {
@@ -31,14 +24,6 @@
         flex-direction: column;
         gap: 50px;
         height: 100%;
-    }
-    &__text{
-        font-size: 32px;
-        font-weight: 700;
-        text-align: center;
-        @media screen and (min-width: 601px) {
-            display: none;
-        }
     }
     &__link {
         display: flex;

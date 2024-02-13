@@ -7,7 +7,7 @@
   font-family: "Open Sans", sans-serif;
 }
 
-body {
+html {
   overflow-x: hidden;
 }
 
@@ -20,13 +20,205 @@ a {
   color: black;
 }
 
-.main {
-  height: 94vh;
+.header {
+  width: 100%;
+  height: 60px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  box-shadow: inset 0px 1px 8px rgb(94, 94, 94);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+}
+.header__container {
+  max-width: 81.25%;
+  width: 100%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1024px) {
+  .header__container {
+    max-width: 93.75%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header__container {
+    max-width: 93.75%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .header__container {
+    max-width: 93.75%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .header__container {
+    max-width: 93.75%;
+  }
+}
+.header__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 6vh;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+.header__cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation {
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .navigation {
+    display: none;
+  }
+}
+.navigation__list {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  align-items: center;
+}
+.navigation__item {
+  font-size: 24px;
+}
+.navigation__item:hover .navigation__link::after {
+  width: 30px;
+}
+.navigation__link {
+  position: relative;
+  font-size: 20px;
+}
+.navigation__link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10px;
+  left: 50%;
+  bottom: -5px;
+  border-bottom: 1px solid black;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+}
+.navigation.open {
+  display: flex;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px 30px 0 30px;
+  background-color: gray;
+}
+
+.navigation.open .navigation__list {
+  flex-direction: column;
+  gap: 50px;
+}
+
+.burger {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .burger {
+    display: flex;
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    position: relative;
+  }
+  .burger.active {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+  }
+  .burger span {
+    width: 100%;
+    display: block;
+    border-top: 1px solid black;
+  }
+  .burger.active span {
+    display: none;
+  }
+  .burger::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid black;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+  }
+  .burger::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid black;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+  }
+}
+.burger.active::before {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
+  -webkit-transform: rotate(45deg) translate(0, 50%);
+  -moz-transform: rotate(45deg) translate(0, 50%);
+  -ms-transform: rotate(45deg) translate(0, 50%);
+  -o-transform: rotate(45deg) translate(0, 50%);
+}
+.burger.active::after {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
+  -webkit-transform: rotate(-45deg) translate(0, -50%);
+  -moz-transform: rotate(-45deg) translate(0, -50%);
+  -ms-transform: rotate(-45deg) translate(0, -50%);
+  -o-transform: rotate(-45deg) translate(0, -50%);
+}
+
+html {
   background-color: rgb(228, 227, 227);
+}
+
+.main {
   padding: 50px 0;
 }
 .main__container {
   max-width: 81.25%;
+  width: 100%;
   margin: 0 auto;
 }
 @media screen and (max-width: 1024px) {

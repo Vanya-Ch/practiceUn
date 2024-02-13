@@ -2,12 +2,16 @@
 
 .header {
     width: 100%;
-    height: 6vh;
+    height: 60px;
     position: sticky;
     top: 0;
     left: 0;
     background-color: #fff;
     box-shadow: inset 0px 1px 8px rgb(94, 94, 94);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5;
 
     &__container {
         @include container;
@@ -112,11 +116,13 @@
         height: 25px;
         align-items: center;
         position: relative;
-        &.active{
+
+        &.active {
             position: absolute;
             right: 30px;
             top: 30px;
         }
+
         & span {
             width: 100%;
             display: block;

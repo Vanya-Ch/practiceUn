@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Pacifico&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/cart/style-cart.css">
     <title>A-ВАНТАЖ 11</title>
 </head>
 
@@ -17,20 +18,20 @@
         <div class="header__container">
             <div class="header__content">
 
-                <a class="header__logo" href="./"><img src="../../assets/images/logo_1.webp" width="100" height="50"
+                <a class="header__logo" href="./"><img src="../../assets/images/logo.webp" width="150" height="50"
                         alt="logo"></a>
 
 
                 <nav class="navigation">
                     <ul class="navigation__list">
                         <li class="navigation__item">
-                            <a class="navigation__link" href="">
+                            <a class="navigation__link" href="pages/catalog/">
                                 Каталог товарів
                             </a>
                         </li>
                         <li class="navigation__item">
-                            <a class="navigation__link" href="pages/contacts/">
-                                Контакти
+                            <a class="navigation__link" href="pages/marks/">
+                                Виробники
                             </a>
                         </li>
                         <li class="navigation__item">
@@ -39,8 +40,8 @@
                             </a>
                         </li>
                         <li class="navigation__item">
-                            <a class="navigation__link" href="pages/marks/">
-                                Виробники
+                            <a class="navigation__link" href="pages/contacts/">
+                                Контакти
                             </a>
                         </li>
                     </ul>
@@ -59,11 +60,17 @@
         </div>
     </header>
     <main class="main__lending">
-        <img class="main__bg-image" src="assets/images/details.webp" alt="car details">
+        <picture >
+			<source media="(max-width: 319px)" srcset="assets/images/425815.png">
+			<source	media="(max-width: 600px)" srcset="assets/images/570815.png">		
+            <source	media="(max-width: 768px)" srcset="assets/images/details_768.png">		
+            <source	media="(max-width: 1024px)" srcset="assets/images/details_1024.jpg">
+			<img class="main__bg-image" src="assets/images/details.webp" alt="main background" />			
+		</picture>
+        
         <div class="main__container">
             <div class="main__content">
-                <div class="main__text">Бажаєте перглянути список товарів?</div>
-                <a href="" class="main__link">
+                <a href="./pages/catalog/" class="main__link">
                     <svg width="24" height="24" viewBox="0 0 576 512">
                         <path fill="#ffffff"
                             d="M290.8 48.6l78.4 29.7L288 109.5 206.8 78.3l78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5V204.7c-1.3 .4-2.6 .8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7V413.9c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zM392 210.6l-82.4 31.2V152.6L392 121v89.6zM154.8 250.9l78.4 29.7L152 311.7 70.8 280.6l78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8L256 323.2v95.9l-82.4 36.2zM421.2 250.9c1.8-.7 3.8-.7 5.7 0l78.4 29.7L424 311.7l-81.2-31.1 78.4-29.7zM523.2 421.2l-77.6 34.1V354.8L528 323.2v90.7c0 3.2-1.9 6-4.8 7.3z" />
@@ -72,9 +79,43 @@
                 </a>
             </div>
         </div>
-    </main>
+        <div class="cart hidden">
+            <div class="cart__modal">
+                <div class="cart__header">
+                    <div class="cart__heading">
+                        Кошик
+                    </div>
+                    <div class="cart__close">
 
-    <script src="assets/js/index.js"></script>
+                    </div>
+                </div>
+                <div class="cart__main">
+
+                </div>
+                <div class="cart__footer">
+                    <div class="cart__totalPrice">
+
+                    </div>
+                    <button class="cart__button">
+                        Оформити замовлення
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.querySelector('.burger').addEventListener('click', (e) => {
+            e.target.classList.toggle('active');
+            document.querySelector('.navigation').classList.toggle('open')
+        })
+        document.querySelector('.header__cart').addEventListener('click', (e) => {
+            document.querySelector('.cart').classList.toggle('hidden')
+        })
+        document.querySelector('.cart__close').addEventListener('click', (e) => {
+            document.querySelector('.cart').classList.toggle('hidden')
+        })
+    </script>
+    <script src="assets/js/cart.js"></script>
 </body>
 
 </html>

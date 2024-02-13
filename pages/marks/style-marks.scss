@@ -1,23 +1,5 @@
-@import "../../assets/style/mixin", "../../assets/style/variables";
-*, ::before, ::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: 0;
-    font-size: 16px;
-    font-family: $Open-sans;
-}
-body{
-    overflow-x: hidden;
-}
-ul,ol{
-    list-style: none;
-}
+@import "../../assets/style/mixin", "../../assets/style/variables", '../../assets/style/general', '../../assets/style/header/header-Exp.scss';
 
-a{
-    text-decoration: none;
-    color: black;
-}
 
 .main{
     &__container{
