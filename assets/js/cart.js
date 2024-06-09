@@ -46,6 +46,7 @@ const cart = filterUniqueByTitle(cartStorage);
 
 
 if (cart.length) {
+    let sum = [];
     cart.forEach((el) => {
         let { title, price} = el;
         let item = document.createElement('div'),
@@ -82,6 +83,7 @@ if (cart.length) {
                 iCount++;
                 itemCount.innerText = iCount;
                 updateValue()
+                
             }
         });
         btnMinus.addEventListener('click', () => {
@@ -89,6 +91,7 @@ if (cart.length) {
                 iCount--;
                 itemCount.innerText = iCount;
                 updateValue()
+                
             }
         });
 
@@ -103,8 +106,11 @@ if (cart.length) {
 
         document.querySelector('.cart__main').append(item);
         document.querySelector('.cart__totalPrice').append(cartPrice);
+        
+        sum.push(Number(itemTotalPrice.innerText.slice(0, -1)))
+        console.log(Number(itemTotalPrice.innerText.slice(0, -1)))
+        console.log(sum)
     })
-    
     
     
 }

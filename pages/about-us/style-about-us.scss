@@ -1,0 +1,23 @@
+@import "../../assets/style/mixin", "../../assets/style/variables", '../../assets/style/general', '../../assets/style/header/header-Exp.scss';
+
+.main {
+    padding: 50px 0;
+
+    &__container {
+        @include container;
+    }
+}
+.swiper {
+    width: 80%;
+    height: 600px;
+
+    align-items: center;
+
+    &-slide {
+        text-align: center;
+        display: inline;
+        justify-content: center;
+        background-color: rgb(231, 243, 174);
+
+    }
+}
